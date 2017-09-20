@@ -1,0 +1,1 @@
+cmd_/home/linux/01-RTC/02/1_RTC.ko := arm-none-linux-gnueabi-ld -EL -r  -T /home/linux/10-fs4412/linux-3.14/scripts/module-common.lds --build-id  -o /home/linux/01-RTC/02/1_RTC.ko /home/linux/01-RTC/02/1_RTC.o /home/linux/01-RTC/02/1_RTC.mod.o

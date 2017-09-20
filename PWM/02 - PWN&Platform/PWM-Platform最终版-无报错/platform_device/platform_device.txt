@@ -1,0 +1,28 @@
+=================
+===platform_device	-	设备部分说明
+=================
+[1]mymodule_init（）
+    (1)申请一个platform_device对象、供设备框架使用
+	struct platform_device *platform_device_alloc(const char *name， int id)；
+        	参数说明：name	-	用于platform总线匹配设备和驱动的标志
+		 id	-	id>0  =》 name+id
+    
+    (2)给platform_device对象添加资源（数据）供platform_driver使用
+        platform_device_add_resources(myplatformdev, myresource, 2);
+   
+        参数说明：platform_device对象、struct resource资源数组、struct resource资源数目
+
+	struct resource数组说明：
+		.start	-	资源起始地址
+		.end 	-	资源结束地址
+		.flags	-	资源类型标志
+
+    (3)把platform_device对象加入到platform_bus总线
+	platform_device_add(myplatformdev);
+
+[2]mymodule_exit（）
+    (1)从platform_bus总线中卸载platform_device对象
+	platform_device_del(myplatformdev);
+
+
+设备位于	-	/sys/bus/platform/devices/xxx

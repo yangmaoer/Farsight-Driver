@@ -1,0 +1,1 @@
+cmd_/home/linux/PWM/kernel/module.ko := arm-none-linux-gnueabi-ld -EL -r  -T /home/linux/10-fs4412/linux-3.14/scripts/module-common.lds --build-id  -o /home/linux/PWM/kernel/module.ko /home/linux/PWM/kernel/module.o /home/linux/PWM/kernel/module.mod.o
